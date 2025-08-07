@@ -1,0 +1,143 @@
+:root {
+  --mint-green: #e6fff5;
+  --vibrant-green: #22c55e;
+  --sidebar-width: 220px;
+  --header-height: 64px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --gray-line: #e5e7eb;
+}
+
+body, .admin-layout {
+  background: var(--mint-green);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.admin-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.admin-sidebar {
+  width: var(--sidebar-width);
+  background: #fff;
+  border-top-left-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0 0 0;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 32px 24px;
+}
+
+.admin-logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.sidebar-sublabel {
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #222;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.sidebar-menu-item:hover {
+  background: #f3f4f6;
+}
+
+.sidebar-menu-item.active {
+  background: var(--vibrant-green);
+  color: #fff;
+}
+
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  filter: grayscale(100%);
+}
+
+.sidebar-menu-item.active .menu-icon {
+  filter: none;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-header {
+  height: var(--header-height);
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--gray-line);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+
+.header-icon:hover {
+  filter: none;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  background: transparent;
+  min-height: 0;
+}
