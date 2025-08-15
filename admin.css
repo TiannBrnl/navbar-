@@ -1,0 +1,131 @@
+/* ...existing code... */
+:root {
+  --mint-green: #e6fff5;
+  --vibrant-green: #22c55e;
+  --dark-green: #43A047;
+  --sidebar-width: 220px;
+  --header-height: 64px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --gray-line: #D5D5D5;
+  --card-shadow: 0 8px 20px rgba(13, 38, 59, 0.06);
+}
+/* ...existing code... */
+
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  background: transparent;
+  min-height: 0;
+}
+
+/* New metrics styles */
+.metrics-section {
+  background: transparent;
+  margin-bottom: 24px;
+}
+
+.metrics-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 4px;
+  margin-bottom: 12px;
+}
+.metrics-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+}
+.chev {
+  color: #666;
+  transition: transform 0.18s ease;
+}
+.chev.open {
+  transform: rotate(180deg);
+}
+
+/* grid of 4 cards per row, responsive */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* Card */
+.metric-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  min-height: 72px;
+}
+
+/* allow empty slot for alignment if needed */
+.metric-card.empty-card {
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* left icon / circle */
+.metric-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.circle.orange { background: #FF8A00; }
+.circle.teal { background: #00bfa5; }
+.circle.blue { background: #1e88e5; }
+.circle.green { background: #43a047; }
+
+.icon-green, .icon-red, .icon-default {
+  font-size: 18px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 6px;
+}
+.icon-green { color: #16a34a; }
+.icon-red { color: #ef4444; }
+.icon-default { color: #374151; }
+
+/* body text */
+.metric-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.metric-title {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 6px;
+}
+.metric-number {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111;
+}
+.metric-subtext {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 6px;
+}
