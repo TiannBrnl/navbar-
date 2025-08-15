@@ -129,3 +129,18 @@
   color: #888;
   margin-top: 6px;
 }
+/* ...existing code... */
+
+.metric-divider {
+  height: 1px;
+  background: #e6e6e6;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* ensure small img icons inside .metric-left size well */
+.metric-left img.small-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
